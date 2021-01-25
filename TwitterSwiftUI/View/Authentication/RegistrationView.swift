@@ -16,7 +16,7 @@ struct RegistrationView: View {
     @State var selectedUIImage: UIImage?
     @State var image: Image?
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    
+    @EnvironmentObject var viewModel : AuthViewModel
     func loadImage(){
         guard let selectedImage = selectedUIImage else {return}
         image = Image(uiImage: selectedImage)
@@ -56,7 +56,7 @@ struct RegistrationView: View {
              
                 
                 VStack(spacing: 20) {
-                    CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelop")
+                    CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
@@ -88,7 +88,10 @@ struct RegistrationView: View {
                 
            
                 
-                Button(action: {  }, label: {
+                Button(action: {
+                    guard let image = selectedUIImage else {return}
+                    viewModel.registerUser(email: email, password: password, username: username, fullname: fullname, profileImage: image)
+                }, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.blue)

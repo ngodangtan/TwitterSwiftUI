@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D607B06B25BBA28F00654AC9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D607B06A25BBA28F00654AC9 /* AuthViewModel.swift */; };
 		D6117B8D25B18A1500DBDFC2 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6117B8C25B18A1500DBDFC2 /* NewTweetView.swift */; };
 		D6117B9725B1923400DBDFC2 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6117B9625B1923400DBDFC2 /* TextArea.swift */; };
 		D63B8C5125B8072A00AC68F7 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63B8C5025B8072A00AC68F7 /* CustomSecureField.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D607B06A25BBA28F00654AC9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		D6117B8C25B18A1500DBDFC2 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		D6117B9625B1923400DBDFC2 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		D63B8C5025B8072A00AC68F7 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		D691CC3725A6A3CC0087E862 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D607B06A25BBA28F00654AC9 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				D6DCA21B25A800E80063B3B4 /* ChatBubble.swift in Sources */,
 				D691CC4925A6B2DF0087E862 /* SearchBar.swift in Sources */,
 				D6CC8C8925A95E720056A1C3 /* NewMessageView.swift in Sources */,
+				D607B06B25BBA28F00654AC9 /* AuthViewModel.swift in Sources */,
 				D6DCA21E25A805110063B3B4 /* Message.swift in Sources */,
 				D69AF81A25A997DF00FDB661 /* UserProfileView.swift in Sources */,
 				D656ADC525A6E5AF006F49A9 /* UserCell.swift in Sources */,
