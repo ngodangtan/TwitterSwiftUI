@@ -9,11 +9,18 @@ import SwiftUI
 
 struct UserProfileView: View {
     @State var selectedFilter: TweetFilterOptions = .tweets
+    @ObservedObject var viewModel : ProfileViewModel
     
+    init(user: User){
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
+    
+    let user: User
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView()
+                ProfileHeaderView(viewModel: viewModel, isFollowed: $viewModel.isFollowed)
                     .padding()
                 FilterButtonView(selectedOption: $selectedFilter).padding()
                 ForEach(0..<9) { tweet in
@@ -25,8 +32,4 @@ struct UserProfileView: View {
     }
 }
 
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileView()
-    }
-}
+
