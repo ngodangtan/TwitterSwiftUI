@@ -9,20 +9,20 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewTweetView = false
-    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel = FeedViewModel()
     var body: some View {
       
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
-                VStack {
-                    ForEach(0..<20) {  _ in
-                        TweetCell()
+                LazyVStack {
+                    ForEach(viewModel.tweets) {  tweet in
+                        TweetCell(tweet: tweet)
                     }
                 }.padding()
             }
             Button(action: {
-                viewModel.signOut()
-                //isShowingNewTweetView.toggle()
+               
+                isShowingNewTweetView.toggle()
                 
             }, label: {
                 Image("tweet")
