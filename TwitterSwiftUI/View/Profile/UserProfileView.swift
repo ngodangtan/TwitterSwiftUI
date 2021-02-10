@@ -20,14 +20,15 @@ struct UserProfileView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView(viewModel: viewModel, isFollowed: $viewModel.isFollowed)
+                ProfileHeaderView(viewModel: viewModel)
                     .padding()
                 FilterButtonView(selectedOption: $selectedFilter).padding()
-                ForEach(0..<9) { tweet in
-                    //TweetCell()
+                ForEach(viewModel.tweets(forFilter: selectedFilter)) { tweet in
+                    TweetCell(tweet: tweet)
+                        .padding()
                 }
             }
-            .navigationTitle("batman")
+            .navigationTitle(user.username)
         }
     }
 }
